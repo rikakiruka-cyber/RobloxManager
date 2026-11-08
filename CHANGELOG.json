@@ -1,0 +1,49 @@
+[
+    {
+        "version":  "2.9.0",
+        "date":  "2026-11-08",
+        "vi":  [
+                   "Sửa: nền các hộp thoại (Lịch sử cập nhật, Cập nhật, Đăng nhập Roblox, Chọn thư mục) theo đúng theme đang chọn",
+                   "Sửa: thanh bên và các icon, nút không đổi màu khi chuyển theme",
+                   "Thêm: hộp thông báo xác nhận và báo lỗi đồng bộ theme của app",
+                   "Sửa: lỗi hiện hộp crash khi gửi Discord, mở acc hoặc kiểm tra cập nhật bị lỗi",
+                   "Sửa: lỗi kiểm tra cập nhật khi cửa sổ chính đã đóng",
+                   "Sửa: lỗi tốn RAM khi chạy lâu do không dọn dữ liệu của game đã tắt",
+                   "Sửa: lỗi mất cài đặt khi file config bị hỏng hoặc ghi dở"
+               ],
+        "en":  [
+                   "Fixed: dialog backgrounds (Update history, Update, Roblox sign-in, Data folder) to follow the selected theme",
+                   "Fixed: sidebar and icons, buttons not changing color when switching themes",
+                   "Added: confirmation and error dialogs that match the app theme",
+                   "Fixed: crash dialog appearing when Discord sending, account launch or update check failed",
+                   "Fixed: update check erroring when the main window was already closed",
+                   "Fixed: memory growth in long sessions caused by data of closed games not being cleaned up",
+                   "Fixed: settings being lost when the config file was corrupt or half-written"
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  2
+    }
+]
