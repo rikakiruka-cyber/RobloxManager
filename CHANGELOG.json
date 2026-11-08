@@ -1,0 +1,59 @@
+[
+    {
+        "version":  "3.1.1",
+        "date":  "2026-11-08",
+        "vi":  [
+                   "Thêm: Chọn client ở thanh bên trái, hiện icon của client.",
+                   "Thêm: Chọn game đã từng chơi, ảnh và tên luôn cập nhật mới từ Roblox.",
+                   "Sửa: Nút ở trang Tài khoản bị cắt khi cửa sổ nhỏ.",
+                   "Sửa: Acc mở lại cứ vào game cũ."
+               ],
+        "en":  [
+                   "Added: Client picker on the left sidebar, showing the client\u0027s icon.",
+                   "Added: Game picker for games you\u0027ve played, with thumbnail and name always up to date from Roblox.",
+                   "Fixed: Accounts page buttons being cut off in small windows.",
+                   "Fixed: Account rejoining the old game after reopening."
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.6.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Mới: Chọn client để mở Roblox theo từng tài khoản — tự quét máy tìm Roblox gốc, Bloxstrap, Fishstrap, Voidstrap (nút 🔄 Quét lại trong mục Tài khoản)",
+                                     "Mới: Kiểm tra nhanh client đã chọn TRƯỚC khi mở — báo lỗi ngay nếu client bị gỡ/hỏng/bị chặn, không phải chờ 90 giây mới biết Roblox không lên được",
+                                     "Sửa lỗi: Danh sách Roblox đang chạy đôi khi hiện acc \"Running\" (0 MB / 0% CPU) dù Roblox đã tắt hẳn (process ma do Windows giữ handle) — khiến auto mở lại khi văng không hoạt động cho acc đó",
+                                     "Mới: Log chẩn đoán — khi tool lọc được process ma sẽ ghi rõ PID + lý do vào khung Log và file log để dễ truy vết"
+                                 ],
+                          "en":  [
+                                     "New: Pick which client launches Roblox per account — auto-scans for official Roblox, Bloxstrap, Fishstrap, Voidstrap (🔄 Rescan button in the Accounts tab)",
+                                     "New: Quick pre-check on the selected client BEFORE launching — reports an error right away if the client was uninstalled/corrupted/blocked, instead of waiting 90 seconds to find out Roblox never started",
+                                     "Fix: The running Roblox list could show an account as \"Running\" (0 MB / 0% CPU) even after Roblox had fully exited (a Windows zombie-process artifact) — this also silently broke auto-reopen-on-crash for that account",
+                                     "New: Diagnostic logging — whenever the tool filters out a zombie process, it now logs the PID and reason to the Log panel and log file for easier troubleshooting"
+                                 ]
+                      },
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  3
+    }
+]
