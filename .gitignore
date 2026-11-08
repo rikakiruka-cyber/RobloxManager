@@ -1,0 +1,13 @@
+bin/
+obj/
+Release_EXE/
+build/
+config.json
+crash.log
+.vs/
+*.user
+
+# Công cụ cá nhân của tác giả – KHÔNG đẩy lên GitHub (chỉ đẩy source) / Author-only tools – never pushed (source only)
+build_exe.bat
+push_update.bat
+tools/

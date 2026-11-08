@@ -1,0 +1,63 @@
+[
+    {
+        "version":  "3.0.0",
+        "date":  "2026-11-08",
+        "vi":  [
+                   "Thêm: Chọn client mở Roblox theo từng acc (Roblox, Bloxstrap, Fishstrap, Voidstrap), tự quét máy + nút Quét lại",
+                   "Thêm: Kiểm tra client trước khi mở",
+                   "Thêm: Log chẩn đoán khi phát hiện process ma",
+                   "Sửa: Danh sách Roblox đang chạy hiện nhầm acc \"Running\" dù Roblox đã tắt hẳn (process ma)",
+                   "Sửa: Auto mở lại khi văng không chạy được cho các acc bị lỗi trên",
+                   "Sửa: Cache CPU không được dọn cho các PID process ma"
+               ],
+        "en":  [
+                   "Added: Per-account client picker (Roblox, Bloxstrap, Fishstrap, Voidstrap) with auto-scan + Rescan button",
+                   "Added: Pre-flight check on selected client before launch",
+                   "Added: Diagnostic logging for zombie process detection",
+                   "Fixed: Running Roblox list showing accounts as \"Running\" after Roblox had exited (zombie process)",
+                   "Fixed: Auto-reopen-on-crash not triggering for accounts affected by the above",
+                   "Fixed: Stale CPU-tracking cache not cleaned up for zombie PIDs"
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.6.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Mới: Chọn client để mở Roblox theo từng tài khoản — tự quét máy tìm Roblox gốc, Bloxstrap, Fishstrap, Voidstrap (nút 🔄 Quét lại trong mục Tài khoản)",
+                                     "Mới: Kiểm tra nhanh client đã chọn TRƯỚC khi mở — báo lỗi ngay nếu client bị gỡ/hỏng/bị chặn, không phải chờ 90 giây mới biết Roblox không lên được",
+                                     "Sửa lỗi: Danh sách Roblox đang chạy đôi khi hiện acc \"Running\" (0 MB / 0% CPU) dù Roblox đã tắt hẳn (process ma do Windows giữ handle) — khiến auto mở lại khi văng không hoạt động cho acc đó",
+                                     "Mới: Log chẩn đoán — khi tool lọc được process ma sẽ ghi rõ PID + lý do vào khung Log và file log để dễ truy vết"
+                                 ],
+                          "en":  [
+                                     "New: Pick which client launches Roblox per account — auto-scans for official Roblox, Bloxstrap, Fishstrap, Voidstrap (🔄 Rescan button in the Accounts tab)",
+                                     "New: Quick pre-check on the selected client BEFORE launching — reports an error right away if the client was uninstalled/corrupted/blocked, instead of waiting 90 seconds to find out Roblox never started",
+                                     "Fix: The running Roblox list could show an account as \"Running\" (0 MB / 0% CPU) even after Roblox had fully exited (a Windows zombie-process artifact) — this also silently broke auto-reopen-on-crash for that account",
+                                     "New: Diagnostic logging — whenever the tool filters out a zombie process, it now logs the PID and reason to the Log panel and log file for easier troubleshooting"
+                                 ]
+                      },
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  3
+    }
+]
