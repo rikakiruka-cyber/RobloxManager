@@ -1,0 +1,45 @@
+[
+    {
+        "version":  "2.8.0",
+        "date":  "2026-11-08",
+        "vi":  [
+                   "Thêm: Hiệu ứng riêng cho từng nền (Aurora, Cosmos, Hell, Love, Dark, White)",
+                   "Thêm: Tên ô hiệu ứng đổi theo nền đang dùng",
+                   "Sửa: Mặc định là nền Dark khi mới cài",
+                   "Sửa: Tắt hiệu ứng thì nền đứng yên hoàn toàn",
+                   "Sửa: Lỗi ngẫu nhiên khi đọc log game, cookie bị xoá nhầm"
+               ],
+        "en":  [
+                   "Added: Unique effects for each background (Aurora, Cosmos, Hell, Love, Dark, White)",
+                   "Added: Effect toggle name follows the current background",
+                   "Fixed: Default background is Dark on fresh install",
+                   "Fixed: Turning effects off now fully freezes the background",
+                   "Fixed: Random log-reading errors, cookie wrongly cleared"
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  2
+    }
+]
