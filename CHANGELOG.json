@@ -1,0 +1,41 @@
+[
+    {
+        "version":  "2.6.0",
+        "date":  "2026-11-08",
+        "vi":  [
+                   "Thêm Lịch sử cập nhật trong Cài đặt",
+                   "Hiện ghi chú của mọi bản bị bỏ qua khi cập nhật",
+                   "Thông báo cập nhật gọn hơn"
+               ],
+        "en":  [
+                   "Added Update history in Settings",
+                   "Show notes for all skipped versions when updating",
+                   "Cleaner update messages"
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  2
+    }
+]

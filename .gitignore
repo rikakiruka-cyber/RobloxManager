@@ -1,0 +1,8 @@
+bin/
+obj/
+Release_EXE/
+build/
+config.json
+crash.log
+.vs/
+*.user
