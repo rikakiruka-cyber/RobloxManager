@@ -1,0 +1,127 @@
+[
+    {
+        "version":  "3.2.1",
+        "date":  "2026-11-08",
+        "vi":  [
+                   "Sửa: Cửa sổ đăng nhập Roblox báo \"Cannot start the embedded browser ... CoreWebView2Environment\" từ lần đăng nhập thứ 2 trở đi (khi thêm nhiều acc). Nguyên nhân: đường dẫn loader WebView2 bị đặt lại ở mỗi cửa sổ; giờ chỉ đặt 1 lần cho mỗi lần chạy app.",
+                   "Sửa: Hộp thoại báo lỗi có thể hiện ra khi đóng cửa sổ đăng nhập lúc trình duyệt đang khởi động.",
+                   "Sửa: Báo cáo Discord bị từ chối (HTTP 400) khi có nhiều acc đang chạy, do danh sách acc vượt giới hạn 1024 ký tự của Discord. Giờ danh sách được cắt gọn cho vừa.",
+                   "Sửa: NativeEngine ghi vượt mảng theo dõi khi có hơn 64 tiến trình Roblox.",
+                   "Sửa: Các phản hồi HTTP của Discord không được giải phóng.",
+                   "Thêm: Thư mục riêng \"WebView2\" trong thư mục dữ liệu, chứa toàn bộ file WebView2 (WebView2\\runtime cho các DLL, WebView2\\profiles cho hồ sơ trình duyệt tạm, tự xoá khi đóng cửa sổ đăng nhập).",
+                   "Thêm: Tự dọn khi mở app các file cũ còn sót trong %TEMP% và thư mục \"runtime\" ẩn.",
+                   "Thêm: Hiện link tải khi máy thiếu WebView2 Runtime, và ghi mọi lỗi WebView2 vào log.",
+                   "Thêm: Ghi an toàn (ghi file tạm rồi thay thế) cho vault.key và games.json, mất điện hay crash giữa chừng không còn làm hỏng file."
+               ],
+        "en":  [
+                   "Fixed: Roblox sign-in window showing \"Cannot start the embedded browser ... CoreWebView2Environment\" from the 2nd sign-in onward (when adding several accounts). The WebView2 loader path was set again for every window; it is now set only once per run.",
+                   "Fixed: Error dialog that could pop up when the sign-in window was closed while the browser was still starting.",
+                   "Fixed: Discord report being rejected (HTTP 400) with many running accounts, because the account list exceeded Discord\u0027s 1024-character field limit. The list is now trimmed to fit.",
+                   "Fixed: NativeEngine writing past its tracking array when there were more than 64 Roblox processes.",
+                   "Fixed: Discord HTTP responses not being disposed.",
+                   "Added: A dedicated \"WebView2\" folder inside the data folder that holds all WebView2 files (WebView2\\runtime for the DLLs, WebView2\\profiles for temporary browser profiles that are deleted when the sign-in window closes).",
+                   "Added: Automatic cleanup on startup of old leftovers in %TEMP% and the hidden \"runtime\" folder.",
+                   "Added: Download link shown when the WebView2 Runtime is missing, and WebView2 errors are now written to the logs.",
+                   "Added: Safe writing (temp file, then replace) for vault.key and games.json, so a power loss or crash can no longer corrupt them."
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.6.2",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Sửa lỗi: Cửa sổ đăng nhập Roblox báo \"Cannot start the embedded browser ... CoreWebView2Environment\" từ lần đăng nhập thứ 2 trở đi (khi thêm nhiều acc)",
+                                     "Mới: Toàn bộ file WebView2 (DLL + hồ sơ trình duyệt tạm) nằm gọn trong 1 thư mục riêng \"WebView2\" ngay trong thư mục dữ liệu; không còn rác ở %TEMP% hay thư mục \"runtime\" ẩn. Bản cũ tự được dọn khi mở app",
+                                     "Sửa lỗi: Báo cáo Discord bị Discord từ chối (lỗi 400) khi có nhiều acc đang chạy vì danh sách acc dài quá giới hạn của Discord",
+                                     "Sửa lỗi: Đóng cửa sổ đăng nhập trong lúc trình duyệt đang khởi động có thể gây hộp thoại lỗi",
+                                     "An toàn dữ liệu: vault.key và games.json được ghi an toàn (ghi tạm rồi thay thế) để mất điện giữa chừng không làm hỏng; ghi thêm log lỗi WebView2 vào logs",
+                                     "Sửa lỗi nhỏ: NativeEngine không bao giờ ghi vượt mảng theo dõi khi có quá nhiều tiến trình Roblox"
+                                 ],
+                          "en":  [
+                                     "Fix: The Roblox sign-in window showed \"Cannot start the embedded browser ... CoreWebView2Environment\" from the 2nd sign-in onward (when adding several accounts)",
+                                     "New: All WebView2 files (DLLs + temporary browser profiles) now live in one dedicated \"WebView2\" folder inside the data folder; no more clutter in %TEMP% or the hidden \"runtime\" folder. Old leftovers are cleaned on startup",
+                                     "Fix: The Discord report was rejected (HTTP 400) with many running accounts because the account list exceeded Discord\u0027s field limit",
+                                     "Fix: Closing the sign-in window while the browser was still starting could pop up an error dialog",
+                                     "Data safety: vault.key and games.json are now written safely (temp file then replace) so a power loss cannot corrupt them; WebView2 errors are written to the logs",
+                                     "Minor: NativeEngine never writes past its tracking array when there are too many Roblox processes"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.1",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Sửa lỗi lớn: Lưu acc thứ 2 làm mất acc thứ 1 (acc 2 ghi đè acc 1). Giờ gõ tên đăng nhập khác = THÊM acc mới, acc cũ giữ nguyên; thêm / xoá / mở từng acc độc lập",
+                                     "Sửa lỗi: Nút Xoá / đổi game / đổi client không còn đụng nhầm acc cũ khi bạn đang gõ tên acc khác",
+                                     "Sửa lỗi: Chữ đang gõ dở bị xoá hoặc nhảy sang acc khác mỗi khi app tự mở lại acc bị văng hoặc đang \"Mở tất cả\"",
+                                     "Sửa lỗi: Tần suất quét (1s/2s/5s) đã lưu không được áp dụng khi mở app (luôn chạy 2 giây)",
+                                     "Sửa lỗi: Lỗi xảy ra lúc xử lý acc bị văng có thể làm acc bị mở lại nhiều lần liên tiếp",
+                                     "Sửa lỗi: Đăng nhập lại thất bại (mất mạng...) làm mất cookie đã lưu của acc",
+                                     "Sửa lỗi: Bấm Lưu liên tục chạy nhiều phiên đăng nhập chồng nhau; \"Mở tất cả\" bấm đúp mở trùng mọi acc",
+                                     "Sửa lỗi: Bật/tắt \"Tự mở lại acc này khi bị văng\" có tác dụng ngay, không cần bấm Lưu",
+                                     "Sửa lỗi: Giao diện bị đơ vài giây mỗi khi có Roblox mới xuất hiện (truy vấn WMI chạy nền)",
+                                     "Mới: Chống vòng lặp văng → mở → văng: acc văng 5 lần trong 10 phút thì tạm dừng tự mở lại và báo Discord",
+                                     "Mới: Tự thử lại tối đa 3 lần (cách 20 giây) khi mở lại acc gặp lỗi mạng / lỗi tạm thời",
+                                     "Mới: Mở acc đang chạy sẵn sẽ hỏi xác nhận; \"Mở tất cả\" bỏ qua acc đang chạy",
+                                     "Mới: Tự sao lưu danh sách acc (accounts.dat.bak) và khôi phục khi file chính bị hỏng; đổi thư mục dữ liệu chép đủ games.json + bản sao lưu",
+                                     "Mới: Chỉ cho chạy 1 bản Manager (tránh 2 bản cùng mở lại acc); tìm được Roblox cài ở Program Files",
+                                     "Sửa lỗi nhỏ: Log bị ghi trùng / đứt dòng; lỗi chạy nền được ghi vào log; hộp thoại lỗi không bật liên tục; Auto mode không spam log khi thiếu quyền"
+                                 ],
+                          "en":  [
+                                     "Major fix: Saving a 2nd account wiped the 1st (it overwrote it). Typing a different username now ADDS a new account and keeps the old one; add / delete / open each account independently",
+                                     "Fix: Delete / change game / change client no longer touch the previously selected account while you are typing another one",
+                                     "Fix: Half-typed text was cleared or jumped to another account whenever the app auto-reopened a crashed account or ran \"Open all\"",
+                                     "Fix: The saved poll interval (1s/2s/5s) was not applied on startup (always ran at 2 seconds)",
+                                     "Fix: An error while handling a crashed account could make it reopen several times in a row",
+                                     "Fix: A failed re-login (network down...) wiped the account\u0027s saved cookie",
+                                     "Fix: Pressing Save repeatedly ran overlapping sign-ins; double-clicking \"Open all\" launched every account twice",
+                                     "Fix: Toggling \"Auto reopen this account on crash\" now applies immediately, no Save needed",
+                                     "Fix: The UI froze for a few seconds whenever a new Roblox appeared (WMI query now runs in the background)",
+                                     "New: Crash-loop guard: an account that crashes 5 times in 10 minutes pauses auto-reopen and alerts Discord",
+                                     "New: Auto-retry up to 3 times (20 seconds apart) when reopening fails due to a network / temporary error",
+                                     "New: Opening an already-running account asks for confirmation; \"Open all\" skips running accounts",
+                                     "New: Automatic account backup (accounts.dat.bak) with recovery when the main file is damaged; changing the data folder now also copies games.json and the backup",
+                                     "New: Only one Manager instance may run (avoids two copies reopening accounts); detects Roblox installed under Program Files",
+                                     "Minor fixes: duplicated / cut-off log lines; background errors are now logged; error dialog no longer pops up repeatedly; Auto mode no longer spams the log when permissions are missing"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Mới: Chọn client để mở Roblox theo từng tài khoản — tự quét máy tìm Roblox gốc, Bloxstrap, Fishstrap, Voidstrap (nút 🔄 Quét lại trong mục Tài khoản)",
+                                     "Mới: Kiểm tra nhanh client đã chọn TRƯỚC khi mở — báo lỗi ngay nếu client bị gỡ/hỏng/bị chặn, không phải chờ 90 giây mới biết Roblox không lên được",
+                                     "Sửa lỗi: Danh sách Roblox đang chạy đôi khi hiện acc \"Running\" (0 MB / 0% CPU) dù Roblox đã tắt hẳn (process ma do Windows giữ handle) — khiến auto mở lại khi văng không hoạt động cho acc đó",
+                                     "Mới: Log chẩn đoán — khi tool lọc được process ma sẽ ghi rõ PID + lý do vào khung Log và file log để dễ truy vết"
+                                 ],
+                          "en":  [
+                                     "New: Pick which client launches Roblox per account — auto-scans for official Roblox, Bloxstrap, Fishstrap, Voidstrap (🔄 Rescan button in the Accounts tab)",
+                                     "New: Quick pre-check on the selected client BEFORE launching — reports an error right away if the client was uninstalled/corrupted/blocked, instead of waiting 90 seconds to find out Roblox never started",
+                                     "Fix: The running Roblox list could show an account as \"Running\" (0 MB / 0% CPU) even after Roblox had fully exited (a Windows zombie-process artifact) — this also silently broke auto-reopen-on-crash for that account",
+                                     "New: Diagnostic logging — whenever the tool filters out a zombie process, it now logs the PID and reason to the Log panel and log file for easier troubleshooting"
+                                 ]
+                      },
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  5
+    }
+]
