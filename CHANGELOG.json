@@ -1,0 +1,123 @@
+[
+    {
+        "version":  "3.2.0",
+        "date":  "2026-11-08",
+        "vi":  [
+                   "Thêm: Thêm nhiều acc: gõ tên khác rồi Lưu là thêm acc mới",
+                   "Thêm: Chống vòng lặp văng → mở → văng (5 lần / 10 phút)",
+                   "Thêm: Tự thử lại tối đa 3 lần khi mở lại bị lỗi mạng",
+                   "Thêm: Hỏi xác nhận khi mở acc đang chạy; “Mở tất cả” bỏ qua acc đang chạy",
+                   "Thêm: Tự sao lưu danh sách acc (accounts.dat.bak)",
+                   "Thêm: Chỉ cho chạy 1 bản Manager",
+                   "Thêm: Tìm Roblox cài ở Program Files",
+                   "Sửa: Lưu acc 2 ghi đè acc 1",
+                   "Sửa: Xoá / đổi game / đổi client đụng nhầm acc cũ",
+                   "Sửa: Chữ đang gõ bị xoá khi app tự mở lại acc",
+                   "Sửa: Acc văng bị mở lại nhiều lần liên tiếp",
+                   "Sửa: Mất cookie đã lưu khi đăng nhập lại thất bại",
+                   "Sửa: Tần suất quét không được áp dụng khi mở app",
+                   "Sửa: Bấm Lưu / “Mở tất cả” liên tục chạy chồng nhau",
+                   "Sửa: Bật/tắt “Tự mở lại” phải bấm Lưu mới có tác dụng",
+                   "Sửa: Giao diện đơ khi có Roblox mới",
+                   "Sửa: Log ghi trùng, đứt dòng; hộp thoại lỗi bật liên tục; Auto mode spam log"
+               ],
+        "en":  [
+                   "Added: Multiple accounts: type a different username and press Save to add a new one",
+                   "Added: Crash-loop guard (5 crashes / 10 minutes)",
+                   "Added: Auto-retry up to 3 times when reopening fails due to a network error",
+                   "Added: Confirmation before opening a running account; “Open all” skips running accounts",
+                   "Added: Automatic account backup (accounts.dat.bak)",
+                   "Added: Single-instance protection",
+                   "Added: Detects Roblox installed in Program Files",
+                   "Fixed: Saving account 2 overwrote account 1",
+                   "Fixed: Delete / game / client changes hit the wrong account",
+                   "Fixed: Typed text cleared when the app auto-reopened accounts",
+                   "Fixed: Crashed account reopened multiple times in a row",
+                   "Fixed: Saved cookie lost after a failed re-login",
+                   "Fixed: Saved poll interval not applied on startup",
+                   "Fixed: Repeated Save / “Open all” clicks ran overlapping",
+                   "Fixed: “Auto reopen” toggle needed Save to take effect",
+                   "Fixed: UI freeze when a new Roblox appeared",
+                   "Fixed: Duplicate or cut-off logs, repeated error dialogs, Auto mode log spam"
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.6.1",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Sửa lỗi lớn: Lưu acc thứ 2 làm mất acc thứ 1 (acc 2 ghi đè acc 1). Giờ gõ tên đăng nhập khác = THÊM acc mới, acc cũ giữ nguyên; thêm / xoá / mở từng acc độc lập",
+                                     "Sửa lỗi: Nút Xoá / đổi game / đổi client không còn đụng nhầm acc cũ khi bạn đang gõ tên acc khác",
+                                     "Sửa lỗi: Chữ đang gõ dở bị xoá hoặc nhảy sang acc khác mỗi khi app tự mở lại acc bị văng hoặc đang \"Mở tất cả\"",
+                                     "Sửa lỗi: Tần suất quét (1s/2s/5s) đã lưu không được áp dụng khi mở app (luôn chạy 2 giây)",
+                                     "Sửa lỗi: Lỗi xảy ra lúc xử lý acc bị văng có thể làm acc bị mở lại nhiều lần liên tiếp",
+                                     "Sửa lỗi: Đăng nhập lại thất bại (mất mạng...) làm mất cookie đã lưu của acc",
+                                     "Sửa lỗi: Bấm Lưu liên tục chạy nhiều phiên đăng nhập chồng nhau; \"Mở tất cả\" bấm đúp mở trùng mọi acc",
+                                     "Sửa lỗi: Bật/tắt \"Tự mở lại acc này khi bị văng\" có tác dụng ngay, không cần bấm Lưu",
+                                     "Sửa lỗi: Giao diện bị đơ vài giây mỗi khi có Roblox mới xuất hiện (truy vấn WMI chạy nền)",
+                                     "Mới: Chống vòng lặp văng → mở → văng: acc văng 5 lần trong 10 phút thì tạm dừng tự mở lại và báo Discord",
+                                     "Mới: Tự thử lại tối đa 3 lần (cách 20 giây) khi mở lại acc gặp lỗi mạng / lỗi tạm thời",
+                                     "Mới: Mở acc đang chạy sẵn sẽ hỏi xác nhận; \"Mở tất cả\" bỏ qua acc đang chạy",
+                                     "Mới: Tự sao lưu danh sách acc (accounts.dat.bak) và khôi phục khi file chính bị hỏng; đổi thư mục dữ liệu chép đủ games.json + bản sao lưu",
+                                     "Mới: Chỉ cho chạy 1 bản Manager (tránh 2 bản cùng mở lại acc); tìm được Roblox cài ở Program Files",
+                                     "Sửa lỗi nhỏ: Log bị ghi trùng / đứt dòng; lỗi chạy nền được ghi vào log; hộp thoại lỗi không bật liên tục; Auto mode không spam log khi thiếu quyền"
+                                 ],
+                          "en":  [
+                                     "Major fix: Saving a 2nd account wiped the 1st (it overwrote it). Typing a different username now ADDS a new account and keeps the old one; add / delete / open each account independently",
+                                     "Fix: Delete / change game / change client no longer touch the previously selected account while you are typing another one",
+                                     "Fix: Half-typed text was cleared or jumped to another account whenever the app auto-reopened a crashed account or ran \"Open all\"",
+                                     "Fix: The saved poll interval (1s/2s/5s) was not applied on startup (always ran at 2 seconds)",
+                                     "Fix: An error while handling a crashed account could make it reopen several times in a row",
+                                     "Fix: A failed re-login (network down...) wiped the account\u0027s saved cookie",
+                                     "Fix: Pressing Save repeatedly ran overlapping sign-ins; double-clicking \"Open all\" launched every account twice",
+                                     "Fix: Toggling \"Auto reopen this account on crash\" now applies immediately, no Save needed",
+                                     "Fix: The UI froze for a few seconds whenever a new Roblox appeared (WMI query now runs in the background)",
+                                     "New: Crash-loop guard: an account that crashes 5 times in 10 minutes pauses auto-reopen and alerts Discord",
+                                     "New: Auto-retry up to 3 times (20 seconds apart) when reopening fails due to a network / temporary error",
+                                     "New: Opening an already-running account asks for confirmation; \"Open all\" skips running accounts",
+                                     "New: Automatic account backup (accounts.dat.bak) with recovery when the main file is damaged; changing the data folder now also copies games.json and the backup",
+                                     "New: Only one Manager instance may run (avoids two copies reopening accounts); detects Roblox installed under Program Files",
+                                     "Minor fixes: duplicated / cut-off log lines; background errors are now logged; error dialog no longer pops up repeatedly; Auto mode no longer spams the log when permissions are missing"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Mới: Chọn client để mở Roblox theo từng tài khoản — tự quét máy tìm Roblox gốc, Bloxstrap, Fishstrap, Voidstrap (nút 🔄 Quét lại trong mục Tài khoản)",
+                                     "Mới: Kiểm tra nhanh client đã chọn TRƯỚC khi mở — báo lỗi ngay nếu client bị gỡ/hỏng/bị chặn, không phải chờ 90 giây mới biết Roblox không lên được",
+                                     "Sửa lỗi: Danh sách Roblox đang chạy đôi khi hiện acc \"Running\" (0 MB / 0% CPU) dù Roblox đã tắt hẳn (process ma do Windows giữ handle) — khiến auto mở lại khi văng không hoạt động cho acc đó",
+                                     "Mới: Log chẩn đoán — khi tool lọc được process ma sẽ ghi rõ PID + lý do vào khung Log và file log để dễ truy vết"
+                                 ],
+                          "en":  [
+                                     "New: Pick which client launches Roblox per account — auto-scans for official Roblox, Bloxstrap, Fishstrap, Voidstrap (🔄 Rescan button in the Accounts tab)",
+                                     "New: Quick pre-check on the selected client BEFORE launching — reports an error right away if the client was uninstalled/corrupted/blocked, instead of waiting 90 seconds to find out Roblox never started",
+                                     "Fix: The running Roblox list could show an account as \"Running\" (0 MB / 0% CPU) even after Roblox had fully exited (a Windows zombie-process artifact) — this also silently broke auto-reopen-on-crash for that account",
+                                     "New: Diagnostic logging — whenever the tool filters out a zombie process, it now logs the PID and reason to the Log panel and log file for easier troubleshooting"
+                                 ]
+                      },
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  4
+    }
+]
