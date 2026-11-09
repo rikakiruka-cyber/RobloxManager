@@ -1,20 +1,12 @@
 [
     {
-        "version":  "3.3.0",
-        "date":  "2026-11-08",
+        "version":  "3.3.1",
+        "date":  "2026-11-09",
         "vi":  [
-                   "Sửa: Link server VIP dạng mới roblox.com/share?code=...\u0026type=Server bị từ chối thẳng, không gửi mã VIP đi được → vào server thường cả lúc bấm chơi lẫn lúc tự mở lại sau khi văng. Giờ app tự giải mã link share qua API Roblox trước khi mở; giải mã lỗi/hết hạn thì dừng hẳn, không tự vào nhầm server.",
-                   "Sửa: Auto-trim RAM chạy vô điều kiện mỗi 10 giây, ép dọn cả acc đang chơi → gây khựng/giật định kỳ trong lúc chơi. Giờ chỉ dọn khi RAM thật sự cao và luôn bỏ qua acc đang được focus.",
-                   "Sửa: Auto mode hạ acc đang chơi xuống Idle priority + giới hạn 1 nhân CPU + CPU ≤25% khi RAM/CPU hệ thống cao → gây đứng hình/crash đúng lúc máy cần xử lý nhiều nhất. Giờ chỉ ép các acc chạy nền, acc đang chơi luôn giữ nguyên tài nguyên.",
-                   "Sửa: App tự dọn RAM của chính nó (mỗi 5 phút) dùng GC ép buộc gây đứng giao diện vài trăm mili-giây. Giờ chuyển sang kiểu nhẹ, không chặn UI.",
-                   "Thêm: Tự giãn chu kỳ quét tiến trình khi cửa sổ bị thu nhỏ xuống khay, giảm CPU/RAM app tự ăn lúc chạy nền."
+                   "Thêm: Khu riêng “SERVER VIP CỦA ACC NÀY” cho từng acc, tách khỏi mục Nâng cao để luôn hiện sẵn, không cần bấm mở rộng mới thấy. Dán link server VIP vào đây — acc văng sẽ tự mở lại đúng server này."
                ],
         "en":  [
-                   "Fixed: The new-style VIP server link roblox.com/share?code=...\u0026type=Server was rejected outright, so the VIP code never got sent — joining a regular server both on launch and on auto-reopen after a crash. The app now resolves share links via Roblox’s API before launching; if resolving fails or the link expired, it stops instead of silently falling back to a regular server.",
-                   "Fixed: Auto-trim ran unconditionally every 10 seconds, forcibly trimming memory of every Roblox instance — including the one you were actively playing — causing periodic stutter during gameplay. It now only trims when RAM is actually high, and always skips the currently focused account.",
-                   "Fixed: Auto mode dropped the actively played account to Idle priority + 1-core limit + CPU ≤25% whenever system RAM/CPU got high, causing freezes/crashes exactly when the game needed resources most. Throttling now only applies to background accounts; the active one always keeps full resources.",
-                   "Fixed: The app’s own periodic self-trim (every 5 minutes) used a forced GC that could freeze the UI for a moment. It’s now a lighter pass that doesn’t block the UI.",
-                   "Added: Process-scan interval now backs off automatically while the window is minimized, reducing the app’s own background CPU/RAM usage."
+                   "Added: A dedicated “VIP SERVER FOR THIS ACCOUNT” section per account, pulled out of the collapsed Advanced panel so it’s always visible instead of hidden. Paste the VIP server link here — on crash/disconnect the account reopens into this exact server."
                ]
     },
     {

@@ -804,11 +804,28 @@
                                             <TextBlock Text="Place ID hoặc link game (để trống = mở thẳng app Roblox)" FontSize="11.5" FontWeight="SemiBold" Margin="0,0,0,6"/>
                                             <TextBox x:Name="AccPlaceBox" Height="34" FontSize="11.5" Margin="0,0,0,12" TextChanged="AccPlaceBox_Changed"/>
                                             <TextBlock Text="Cookie .ROBLOSECURITY (chỉ khi muốn dán tay)" FontSize="11.5" FontWeight="SemiBold" Margin="0,0,0,6"/>
-                                            <PasswordBox x:Name="AccCookieBox" Height="34" FontSize="11.5" Margin="0,0,0,12"/>
-                                            <TextBlock Text="Link server VIP (khi bị văng sẽ kiểm tra link rồi vào lại đúng server này)" FontSize="11.5" FontWeight="SemiBold" Margin="0,0,0,6"/>
-                                            <TextBox x:Name="AccVipBox" Height="34" FontSize="11.5"/>
+                                            <PasswordBox x:Name="AccCookieBox" Height="34" FontSize="11.5"/>
                                         </StackPanel>
                                     </Expander>
+
+                                    <!-- Khu riêng cho Server VIP — tách khỏi mục "Nâng cao" (trước đây bị gộp chung
+                                         nên dễ bỏ sót/khó thấy) để luôn hiện sẵn, không cần bấm mở rộng. -->
+                                    <Border Style="{StaticResource GlassBar}" Padding="14,12" Margin="0,0,0,18">
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                                <Viewbox Width="15" Height="15" Margin="0,0,8,0">
+                                                    <Path Fill="{DynamicResource AccentWarningBrush}" Data="M12,2 L15,9 L22,9.5 L17,14.5 L18.5,21.5 L12,18 L5.5,21.5 L7,14.5 L2,9.5 L9,9 Z"/>
+                                                </Viewbox>
+                                                <TextBlock Text="SERVER VIP CỦA ACC NÀY" FontSize="11.5" FontWeight="Bold"
+                                                           Foreground="{DynamicResource AccentWarningBrush}" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                            <TextBlock TextWrapping="Wrap" FontSize="10.5" Foreground="{DynamicResource TextDimBrush}" Margin="0,0,0,8">
+                                                Dán link server VIP đầy đủ (từ nút Share trong game hoặc link có <Run FontFamily="Consolas" Text="privateServerLinkCode"/>). Khi acc này bị văng, app tự kiểm tra link rồi mở lại ĐÚNG server VIP này — không bỏ trống nếu không muốn bị rơi vào server thường.
+                                            </TextBlock>
+                                            <TextBox x:Name="AccVipBox" Height="34" FontSize="11.5"
+                                                      ToolTip="https://www.roblox.com/share?code=...&amp;type=Server  hoặc  https://www.roblox.com/games/ID?privateServerLinkCode=..."/>
+                                        </StackPanel>
+                                    </Border>
 
                                     <CheckBox x:Name="AccAutoChk" Content="Tự mở lại acc này khi bị văng" IsChecked="True" Checked="AccAuto_Changed" Unchecked="AccAuto_Changed"
                                               Foreground="{DynamicResource AccentWarningBrush}" FontWeight="SemiBold"

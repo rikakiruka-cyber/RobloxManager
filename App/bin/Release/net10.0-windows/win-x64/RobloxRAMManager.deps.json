@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v10.0": {},
     ".NETCoreApp,Version=v10.0/win-x64": {
-      "RobloxRAMManager/3.3.0": {
+      "RobloxRAMManager/3.3.1": {
         "dependencies": {
           "System.Management": "8.0.0",
           "Microsoft.Web.WebView2.Core": "1.0.2792.45",
@@ -1003,7 +1003,7 @@
     }
   },
   "libraries": {
-    "RobloxRAMManager/3.3.0": {
+    "RobloxRAMManager/3.3.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

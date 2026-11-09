@@ -94,16 +94,20 @@ public sealed class ProcessMonitor
 
             foreach (var p in procs)
             {
-                currentPids.Add(p.ProcessId);
-
                 var existing = FindByPid(p.ProcessId);
-                if (existing != null)
+
+                // Native layer không đọc được info thật (OpenProcess lỗi — thường do process đang
+                // dở quá trình thoát/crash, hoặc còn sót PID "ma" trong snapshot của Windows) sẽ trả
+                // WorkingSetBytes = 0. Một RobloxPlayerBeta.exe thật đang sống không bao giờ có working
+                // set = 0 byte, nên đây là dấu hiệu đáng tin để lọc "process ma" — trước đây app vẫn
+                // thêm nó vào danh sách với 0 MB/0% và để nguyên mãi (Task Manager không thấy vì bản
+                // thân Windows cũng gần như đã dọn xong, chỉ còn sót entry trong snapshot).
+                bool looksGhost = p.WorkingSetBytes == 0;
+
+                if (existing == null)
                 {
-                    existing.Update(p);
-                    existing.RefreshUptime();
-                }
-                else
-                {
+                    if (looksGhost) continue; // chưa từng thấy & không đọc được info thật → bỏ qua hẳn
+                    currentPids.Add(p.ProcessId);
                     var vm = new RobloxInstanceVM();
                     try
                     {
@@ -119,6 +123,23 @@ public sealed class ProcessMonitor
                     vm.Update(p);
                     vm.Index = Instances.Count + 1;
                     Instances.Add(vm);
+                }
+                else
+                {
+                    currentPids.Add(p.ProcessId);
+                    if (looksGhost)
+                    {
+                        // Đã từng đọc info thật trước đó, lần này lỗi → có thể chỉ là nhiễu tạm thời lúc
+                        // process đang thoát. Không ghi đè RAM/CPU về 0 (tránh nhấp nháy sai); vẫn coi là
+                        // "đang có" để không báo văng nhầm — nếu process thật sự đã mất hẳn, lần quét sau
+                        // nó sẽ không còn trong snapshot nữa và cơ chế phát hiện văng bên dưới sẽ tự bắt được.
+                        existing.RefreshUptime();
+                    }
+                    else
+                    {
+                        existing.Update(p);
+                        existing.RefreshUptime();
+                    }
                 }
             }
 
