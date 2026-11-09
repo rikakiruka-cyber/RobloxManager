@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <RootNamespace>RobloxRAMManager</RootNamespace>
+    <AssemblyName>RobloxRAMManager</AssemblyName>
+    <Version>3.4.0</Version>
+    <Authors>RikaSoora</Authors>
+    <Company>RikaSoora</Company>
+    <Product>Roblox RAM Manager</Product>
+    <AssemblyTitle>Roblox RAM Manager by RikaSoora</AssemblyTitle>
+    <Description>Roblox RAM Manager by RikaSoora</Description>
+    <Copyright>Copyright (c) 2026 RikaSoora</Copyright>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Assets\mascot.png" />
+    <Resource Include="Assets\app.ico" />
+    <EmbeddedResource Include="..\CHANGELOG.json" LogicalName="changelog.json" WithCulture="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Chỉ dùng để biên dịch; DLL được nhúng vào exe (xem target EmbedWebView2) rồi giải nén vào thư mục dữ liệu -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2792.45" ExcludeAssets="runtime;native" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+  </ItemGroup>
+  <Target Name="EmbedWebView2" BeforeTargets="AssignTargetPaths" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <_Wv2Ref Include="@(ReferencePath)" Condition="'%(Filename)'=='Microsoft.Web.WebView2.Core' Or '%(Filename)'=='Microsoft.Web.WebView2.Wpf'" />
+      <EmbeddedResource Include="@(_Wv2Ref)" LogicalName="rt.%(Filename)%(Extension)" WithCulture="false" />
+      <EmbeddedResource Include="$(NuGetPackageRoot)microsoft.web.webview2/1.0.2792.45/runtimes/win-x64/native/WebView2Loader.dll"
+                        LogicalName="rt.WebView2Loader.dll" WithCulture="false"
+                        Condition="Exists('$(NuGetPackageRoot)microsoft.web.webview2/1.0.2792.45/runtimes/win-x64/native/WebView2Loader.dll')" />
+    </ItemGroup>
+  </Target>
+</Project>

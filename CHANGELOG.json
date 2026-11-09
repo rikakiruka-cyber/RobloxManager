@@ -1,0 +1,129 @@
+[
+    {
+        "version":  "3.4.0",
+        "date":  "2026-11-09",
+        "vi":  [
+                   "Sửa: Bảo vệ acc đang chơi hoặc vừa chơi trong 10 phút khỏi mọi tác động tối ưu.",
+                   "Sửa: Không sử dụng Idle; priority tối thiểu là BelowNormal.",
+                   "Sửa: CPU Affinity luôn giữ ít nhất 50% số core.",
+                   "Sửa: CPU Cap: 50–100%, mặc định 60%, chỉ áp dụng cho acc nền.",
+                   "Sửa: Thay forced trim bằng Low Memory Priority + EcoQoS cho acc nền.",
+                   "Sửa: Giới hạn trim tự động: 1 acc nền/lượt, mỗi PID tối đa 1 lần/60 giây. Trim thủ công vẫn hoạt động ngay lập tức.",
+                   "Sửa: Điều chỉnh ngưỡng RAM thành 86% / 93% / 75%.",
+                   "Sửa: Chuyển tính năng Tối ưu toàn bộ sang luồng nền.",
+                   "Sửa: C++: thay SendMessageTimeout bằng IsHungAppWindow để tránh chặn luồng xử lý."
+               ],
+        "en":  [
+                   "Fixed: Protect accounts currently playing or active within the last 10 minutes from optimization.",
+                   "Fixed: Never use Idle; minimum priority is BelowNormal.",
+                   "Fixed: CPU Affinity always keeps at least 50% of available cores.",
+                   "Fixed: CPU Cap: 50–100%, default 60%, applied only to background accounts.",
+                   "Fixed: Replace forced trimming with Low Memory Priority + EcoQoS for background accounts.",
+                   "Fixed: Limit automatic trimming to 1 background account per cycle, with a 60-second cooldown per PID. Manual trim remains immediate.",
+                   "Fixed: Adjust RAM thresholds to 86% / 93% / 75%.",
+                   "Fixed: Run Optimize All in a background thread.",
+                   "Fixed: C++: replace SendMessageTimeout with IsHungAppWindow to prevent blocking."
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.6.2",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Sửa lỗi: Sau khi Roblox văng và mở lại, bảng hiện thừa 1 dòng Roblox \"ma\" (0 MB, không có cửa sổ) dù Task Manager chỉ có 1 — nay lọc cả process còn sót vài trăm KB, hỏi thẳng Windows xem PID còn sống không và xử lý PID bị cấp lại; ghi log mỗi lần bỏ một process ma",
+                                     "Sửa lỗi: Cửa sổ đăng nhập Roblox báo \"Cannot start the embedded browser ... CoreWebView2Environment\" từ lần đăng nhập thứ 2 trở đi (khi thêm nhiều acc)",
+                                     "Mới: Toàn bộ file WebView2 (DLL + hồ sơ trình duyệt tạm) nằm gọn trong 1 thư mục riêng \"WebView2\" ngay trong thư mục dữ liệu; không còn rác ở %TEMP% hay thư mục \"runtime\" ẩn. Bản cũ tự được dọn khi mở app",
+                                     "Sửa lỗi: Báo cáo Discord bị Discord từ chối (lỗi 400) khi có nhiều acc đang chạy vì danh sách acc dài quá giới hạn của Discord",
+                                     "Sửa lỗi: Đóng cửa sổ đăng nhập trong lúc trình duyệt đang khởi động có thể gây hộp thoại lỗi",
+                                     "An toàn dữ liệu: vault.key và games.json được ghi an toàn (ghi tạm rồi thay thế) để mất điện giữa chừng không làm hỏng; ghi thêm log lỗi WebView2 vào logs",
+                                     "Sửa lỗi nhỏ: NativeEngine không bao giờ ghi vượt mảng theo dõi khi có quá nhiều tiến trình Roblox"
+                                 ],
+                          "en":  [
+                                     "Fix: After Roblox crashed and was reopened, the list showed an extra phantom Roblox row (0 MB, no window) while Task Manager had only one — now also filters leftover processes with a few hundred KB, asks Windows directly whether the PID is alive, handles reused PIDs, and logs every ghost it drops",
+                                     "Fix: The Roblox sign-in window showed \"Cannot start the embedded browser ... CoreWebView2Environment\" from the 2nd sign-in onward (when adding several accounts)",
+                                     "New: All WebView2 files (DLLs + temporary browser profiles) now live in one dedicated \"WebView2\" folder inside the data folder; no more clutter in %TEMP% or the hidden \"runtime\" folder. Old leftovers are cleaned on startup",
+                                     "Fix: The Discord report was rejected (HTTP 400) with many running accounts because the account list exceeded Discord\u0027s field limit",
+                                     "Fix: Closing the sign-in window while the browser was still starting could pop up an error dialog",
+                                     "Data safety: vault.key and games.json are now written safely (temp file then replace) so a power loss cannot corrupt them; WebView2 errors are written to the logs",
+                                     "Minor: NativeEngine never writes past its tracking array when there are too many Roblox processes"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.1",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Sửa lỗi lớn: Lưu acc thứ 2 làm mất acc thứ 1 (acc 2 ghi đè acc 1). Giờ gõ tên đăng nhập khác = THÊM acc mới, acc cũ giữ nguyên; thêm / xoá / mở từng acc độc lập",
+                                     "Sửa lỗi: Nút Xoá / đổi game / đổi client không còn đụng nhầm acc cũ khi bạn đang gõ tên acc khác",
+                                     "Sửa lỗi: Chữ đang gõ dở bị xoá hoặc nhảy sang acc khác mỗi khi app tự mở lại acc bị văng hoặc đang \"Mở tất cả\"",
+                                     "Sửa lỗi: Tần suất quét (1s/2s/5s) đã lưu không được áp dụng khi mở app (luôn chạy 2 giây)",
+                                     "Sửa lỗi: Lỗi xảy ra lúc xử lý acc bị văng có thể làm acc bị mở lại nhiều lần liên tiếp",
+                                     "Sửa lỗi: Đăng nhập lại thất bại (mất mạng...) làm mất cookie đã lưu của acc",
+                                     "Sửa lỗi: Bấm Lưu liên tục chạy nhiều phiên đăng nhập chồng nhau; \"Mở tất cả\" bấm đúp mở trùng mọi acc",
+                                     "Sửa lỗi: Bật/tắt \"Tự mở lại acc này khi bị văng\" có tác dụng ngay, không cần bấm Lưu",
+                                     "Sửa lỗi: Giao diện bị đơ vài giây mỗi khi có Roblox mới xuất hiện (truy vấn WMI chạy nền)",
+                                     "Mới: Chống vòng lặp văng → mở → văng: acc văng 5 lần trong 10 phút thì tạm dừng tự mở lại và báo Discord",
+                                     "Mới: Tự thử lại tối đa 3 lần (cách 20 giây) khi mở lại acc gặp lỗi mạng / lỗi tạm thời",
+                                     "Mới: Mở acc đang chạy sẵn sẽ hỏi xác nhận; \"Mở tất cả\" bỏ qua acc đang chạy",
+                                     "Mới: Tự sao lưu danh sách acc (accounts.dat.bak) và khôi phục khi file chính bị hỏng; đổi thư mục dữ liệu chép đủ games.json + bản sao lưu",
+                                     "Mới: Chỉ cho chạy 1 bản Manager (tránh 2 bản cùng mở lại acc); tìm được Roblox cài ở Program Files",
+                                     "Sửa lỗi nhỏ: Log bị ghi trùng / đứt dòng; lỗi chạy nền được ghi vào log; hộp thoại lỗi không bật liên tục; Auto mode không spam log khi thiếu quyền"
+                                 ],
+                          "en":  [
+                                     "Major fix: Saving a 2nd account wiped the 1st (it overwrote it). Typing a different username now ADDS a new account and keeps the old one; add / delete / open each account independently",
+                                     "Fix: Delete / change game / change client no longer touch the previously selected account while you are typing another one",
+                                     "Fix: Half-typed text was cleared or jumped to another account whenever the app auto-reopened a crashed account or ran \"Open all\"",
+                                     "Fix: The saved poll interval (1s/2s/5s) was not applied on startup (always ran at 2 seconds)",
+                                     "Fix: An error while handling a crashed account could make it reopen several times in a row",
+                                     "Fix: A failed re-login (network down...) wiped the account\u0027s saved cookie",
+                                     "Fix: Pressing Save repeatedly ran overlapping sign-ins; double-clicking \"Open all\" launched every account twice",
+                                     "Fix: Toggling \"Auto reopen this account on crash\" now applies immediately, no Save needed",
+                                     "Fix: The UI froze for a few seconds whenever a new Roblox appeared (WMI query now runs in the background)",
+                                     "New: Crash-loop guard: an account that crashes 5 times in 10 minutes pauses auto-reopen and alerts Discord",
+                                     "New: Auto-retry up to 3 times (20 seconds apart) when reopening fails due to a network / temporary error",
+                                     "New: Opening an already-running account asks for confirmation; \"Open all\" skips running accounts",
+                                     "New: Automatic account backup (accounts.dat.bak) with recovery when the main file is damaged; changing the data folder now also copies games.json and the backup",
+                                     "New: Only one Manager instance may run (avoids two copies reopening accounts); detects Roblox installed under Program Files",
+                                     "Minor fixes: duplicated / cut-off log lines; background errors are now logged; error dialog no longer pops up repeatedly; Auto mode no longer spams the log when permissions are missing"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Mới: Chọn client để mở Roblox theo từng tài khoản — tự quét máy tìm Roblox gốc, Bloxstrap, Fishstrap, Voidstrap (nút 🔄 Quét lại trong mục Tài khoản)",
+                                     "Mới: Kiểm tra nhanh client đã chọn TRƯỚC khi mở — báo lỗi ngay nếu client bị gỡ/hỏng/bị chặn, không phải chờ 90 giây mới biết Roblox không lên được",
+                                     "Sửa lỗi: Danh sách Roblox đang chạy đôi khi hiện acc \"Running\" (0 MB / 0% CPU) dù Roblox đã tắt hẳn (process ma do Windows giữ handle) — khiến auto mở lại khi văng không hoạt động cho acc đó",
+                                     "Mới: Log chẩn đoán — khi tool lọc được process ma sẽ ghi rõ PID + lý do vào khung Log và file log để dễ truy vết"
+                                 ],
+                          "en":  [
+                                     "New: Pick which client launches Roblox per account — auto-scans for official Roblox, Bloxstrap, Fishstrap, Voidstrap (🔄 Rescan button in the Accounts tab)",
+                                     "New: Quick pre-check on the selected client BEFORE launching — reports an error right away if the client was uninstalled/corrupted/blocked, instead of waiting 90 seconds to find out Roblox never started",
+                                     "Fix: The running Roblox list could show an account as \"Running\" (0 MB / 0% CPU) even after Roblox had fully exited (a Windows zombie-process artifact) — this also silently broke auto-reopen-on-crash for that account",
+                                     "New: Diagnostic logging — whenever the tool filters out a zombie process, it now logs the PID and reason to the Log panel and log file for easier troubleshooting"
+                                 ]
+                      },
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  5
+    }
+]

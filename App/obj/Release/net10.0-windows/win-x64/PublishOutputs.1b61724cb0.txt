@@ -1,0 +1,4 @@
+D:\Download\RobloxRAMManager_v2_6_3_safe\RobloxRAMManager\Release_EXE\Microsoft.Web.WebView2.Core.xml
+D:\Download\RobloxRAMManager_v2_6_3_safe\RobloxRAMManager\Release_EXE\Microsoft.Web.WebView2.Wpf.xml
+D:\Download\RobloxRAMManager_v2_6_3_safe\RobloxRAMManager\Release_EXE\Microsoft.Web.WebView2.WinForms.xml
+D:\Download\RobloxRAMManager_v2_6_3_safe\RobloxRAMManager\Release_EXE\RobloxRAMManager.exe
