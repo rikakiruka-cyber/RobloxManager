@@ -1,0 +1,161 @@
+[
+    {
+        "version":  "3.5.1",
+        "date":  "2026-11-10",
+        "vi":  [
+                   "Sửa: Khắc phục lỗi ngôn ngữ. Khi chọn English, toàn bộ giao diện Cài đặt, Giới hạn CPU/RAM và log Win32/ProcessMonitor đều hiển thị tiếng Anh. Tiếng Việt cũng được đồng bộ hoàn toàn.",
+                   "Thêm: Hỗ trợ giới hạn RAM cứng từ 256 MB đến 4 GB, bước nhảy 256 MB (256, 512, 768 MB, 1 GB, 1.25 GB... 4 GB). Config cũ tự chuẩn hóa về bội số 256 MB.",
+                   "Thêm: Cảnh báo đỏ khi giới hạn RAM dưới 1 GB do nguy cơ page-fault liên tục khiến Roblox bị đứng hình.",
+                   "Sửa: Đọc log Roblox mỗi 12 giây theo đúng số byte đã xử lý. Không mở file khi không có dữ liệu mới, giảm giật và tranh chấp I/O trên máy yếu hoặc HDD.",
+                   "Sửa: Đặt tên Job Object theo PID. Khi mở lại ứng dụng, tự động gỡ CPU Cap, RAM Cap và EcoQoS còn sót sau khi ứng dụng bị crash.",
+                   "Thêm: Cảnh báo đỏ khi CPU Cap dưới 30%, do có thể gây khựng game, rớt mạng hoặc khiến Roblox ngắt kết nối.",
+                   "Sửa: Chuyển chức năng Tối ưu acc trong chi tiết tài khoản sang luồng nền, tránh làm đơ giao diện."
+               ],
+        "en":  [
+                   "Fixed: Language localization issues. Selecting English now displays the entire Settings interface, CPU/RAM Limit sections, and Win32/ProcessMonitor logs in English. Vietnamese is also fully localized.",
+                   "Added: Hard RAM limits from 256 MB to 4 GB in 256 MB increments (256, 512, 768 MB, 1 GB, 1.25 GB... 4 GB). Existing configurations are automatically normalized to the nearest multiple of 256 MB.",
+                   "Added: A red warning when the RAM limit is below 1 GB due to the risk of continuous page faults causing Roblox to freeze.",
+                   "Fixed: Roblox logs are now read every 12 seconds using the exact number of bytes already processed. Files are not opened when no new data is available, reducing stutters and I/O contention on low-end PCs and HDDs.",
+                   "Fixed: Job Objects are now named by PID. On application startup, leftover CPU Caps, RAM Caps, and EcoQoS settings from previous crashes are automatically cleaned up.",
+                   "Added: A red warning when CPU Cap is below 30%, as it may cause game stuttering, network drops, or Roblox disconnections.",
+                   "Fixed: Move Optimize Account in the account details panel to a background thread to prevent UI freezing."
+               ]
+    },
+    {
+        "value":  [
+                      {
+                          "version":  "2.6.5",
+                          "date":  "2026-11-10",
+                          "vi":  [
+                                     "Sửa lỗi: Chọn English nhưng phần Giới hạn CPU/RAM trong Cài đặt vẫn hiện tiếng Việt, và một số dòng log lỗi Win32/ProcessMonitor chưa dịch — nay dịch đủ, English = toàn bộ tiếng Anh, Tiếng Việt = toàn bộ tiếng Việt",
+                                     "Mới: Cho phép đặt giới hạn RAM cứng dưới 1 GB theo bước 256 MB: 256, 512, 768 MB, 1 GB, 1.25 GB ... 4 GB (sàn 256 MB); config cũ tự chuẩn hoá về bội số 256. Dưới 1 GB hiện cảnh báo đỏ vì Roblox có thể đứng hình do page-fault liên tục",
+                                     "Sửa lỗi: Đọc log Roblox mỗi 12 giây vẫn đọc lại gần hết file log (offset lưu sai do buffer) → nay chỉ đọc phần mới theo đúng số byte đã xử lý, không có dữ liệu mới thì không mở file; giảm giật và tranh I/O trên máy yếu/HDD",
+                                     "Sửa lỗi: Nếu app bị crash cứng, giới hạn CPU (Job Object) còn kẹt trên Roblox và lần sau không gỡ được → nay Job đặt tên theo PID, mở app lại sẽ tự gỡ giới hạn CPU/RAM/EcoQoS còn sót",
+                                     "Mới: Slider giới hạn CPU hiện cảnh báo đỏ khi kéo dưới 30% (game có thể khựng, rớt mạng, bị Roblox ngắt kết nối giống như văng)",
+                                     "Sửa lỗi: Nút Tối ưu acc trong chi tiết tài khoản không còn chạy trên luồng giao diện nên không bị đơ"
+                                 ],
+                          "en":  [
+                                     "Fix: With English selected, the CPU/RAM limit section in Settings (and some Win32/ProcessMonitor log lines) still showed Vietnamese — everything is now translated: English = fully English, Vietnamese = fully Vietnamese",
+                                     "New: Hard RAM limits below 1 GB are allowed in 256 MB steps: 256, 512, 768 MB, 1 GB, 1.25 GB ... 4 GB (floor 256 MB); old configs are normalised to multiples of 256. Below 1 GB a red warning explains Roblox may freeze from constant page faults",
+                                     "Fix: The Roblox log reader (every 12 s) still re-read almost the whole log file because the saved offset was wrong due to buffering → it now reads only new data using the exact processed byte offset, and does not open the file when nothing is new; less stutter and I/O contention on weak PCs/HDDs",
+                                     "Fix: After a hard app crash, the CPU limit (Job Object) stayed on Roblox and could not be removed next time → Jobs are now named per PID, and relaunching the app automatically clears leftover CPU/RAM/EcoQoS limits",
+                                     "New: The CPU limit slider shows a red warning below 30% (the game may stutter, lose network and be disconnected by Roblox, which looks like a crash)",
+                                     "Fix: The per-account Optimize button no longer runs on the UI thread, so it cannot freeze the window"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.4",
+                          "date":  "2026-11-09",
+                          "vi":  [
+                                     "Sửa lỗi: Slider giới hạn CPU không cho chọn dưới 50% (cả file cấu hình và code đều chặn) — nay 10–100%, 100 = tắt",
+                                     "Sửa lỗi: Giới hạn CPU trước đây chỉ áp khi bấm nút Tối ưu hoặc RAM ≥ 93% và bỏ qua acc đang chơi → thực tế không bao giờ có tác dụng. Nay áp liên tục cho mọi acc, acc mới mở cũng tự được áp",
+                                     "Sửa lỗi: Giới hạn RAM chỉ trim 1 lần/60 giây và bỏ qua acc đang chơi nên game phình lại ngay. Nay là giới hạn CỨNG (hard working-set max) áp liên tục cho mọi acc, tối thiểu 200 MB, bước 50 MB",
+                                     "Mới: Ghi log mã lỗi Win32 khi không đặt được giới hạn; thoát app sẽ gỡ toàn bộ giới hạn CPU/RAM"
+                                 ],
+                          "en":  [
+                                     "Fix: The CPU limit slider could not go below 50% (both config loading and code clamped it) — now 10–100%, 100 = off",
+                                     "Fix: The CPU limit used to apply only on the Optimize buttons or at RAM ≥ 93%, and skipped the active account, so it effectively never worked. It now applies continuously to every account, including newly opened ones",
+                                     "Fix: The RAM limit only trimmed once per 60 s and skipped the active account, so the game grew right back. It is now a HARD working-set maximum applied continuously to every account, min 200 MB, 50 MB steps",
+                                     "New: Win32 error codes are logged when a limit cannot be applied; all CPU/RAM limits are removed when the app exits"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.2",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Sửa lỗi: Sau khi Roblox văng và mở lại, bảng hiện thừa 1 dòng Roblox \"ma\" (0 MB, không có cửa sổ) dù Task Manager chỉ có 1 — nay lọc cả process còn sót vài trăm KB, hỏi thẳng Windows xem PID còn sống không và xử lý PID bị cấp lại; ghi log mỗi lần bỏ một process ma",
+                                     "Sửa lỗi: Cửa sổ đăng nhập Roblox báo \"Cannot start the embedded browser ... CoreWebView2Environment\" từ lần đăng nhập thứ 2 trở đi (khi thêm nhiều acc)",
+                                     "Mới: Toàn bộ file WebView2 (DLL + hồ sơ trình duyệt tạm) nằm gọn trong 1 thư mục riêng \"WebView2\" ngay trong thư mục dữ liệu; không còn rác ở %TEMP% hay thư mục \"runtime\" ẩn. Bản cũ tự được dọn khi mở app",
+                                     "Sửa lỗi: Báo cáo Discord bị Discord từ chối (lỗi 400) khi có nhiều acc đang chạy vì danh sách acc dài quá giới hạn của Discord",
+                                     "Sửa lỗi: Đóng cửa sổ đăng nhập trong lúc trình duyệt đang khởi động có thể gây hộp thoại lỗi",
+                                     "An toàn dữ liệu: vault.key và games.json được ghi an toàn (ghi tạm rồi thay thế) để mất điện giữa chừng không làm hỏng; ghi thêm log lỗi WebView2 vào logs",
+                                     "Sửa lỗi nhỏ: NativeEngine không bao giờ ghi vượt mảng theo dõi khi có quá nhiều tiến trình Roblox"
+                                 ],
+                          "en":  [
+                                     "Fix: After Roblox crashed and was reopened, the list showed an extra phantom Roblox row (0 MB, no window) while Task Manager had only one — now also filters leftover processes with a few hundred KB, asks Windows directly whether the PID is alive, handles reused PIDs, and logs every ghost it drops",
+                                     "Fix: The Roblox sign-in window showed \"Cannot start the embedded browser ... CoreWebView2Environment\" from the 2nd sign-in onward (when adding several accounts)",
+                                     "New: All WebView2 files (DLLs + temporary browser profiles) now live in one dedicated \"WebView2\" folder inside the data folder; no more clutter in %TEMP% or the hidden \"runtime\" folder. Old leftovers are cleaned on startup",
+                                     "Fix: The Discord report was rejected (HTTP 400) with many running accounts because the account list exceeded Discord\u0027s field limit",
+                                     "Fix: Closing the sign-in window while the browser was still starting could pop up an error dialog",
+                                     "Data safety: vault.key and games.json are now written safely (temp file then replace) so a power loss cannot corrupt them; WebView2 errors are written to the logs",
+                                     "Minor: NativeEngine never writes past its tracking array when there are too many Roblox processes"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.1",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Sửa lỗi lớn: Lưu acc thứ 2 làm mất acc thứ 1 (acc 2 ghi đè acc 1). Giờ gõ tên đăng nhập khác = THÊM acc mới, acc cũ giữ nguyên; thêm / xoá / mở từng acc độc lập",
+                                     "Sửa lỗi: Nút Xoá / đổi game / đổi client không còn đụng nhầm acc cũ khi bạn đang gõ tên acc khác",
+                                     "Sửa lỗi: Chữ đang gõ dở bị xoá hoặc nhảy sang acc khác mỗi khi app tự mở lại acc bị văng hoặc đang \"Mở tất cả\"",
+                                     "Sửa lỗi: Tần suất quét (1s/2s/5s) đã lưu không được áp dụng khi mở app (luôn chạy 2 giây)",
+                                     "Sửa lỗi: Lỗi xảy ra lúc xử lý acc bị văng có thể làm acc bị mở lại nhiều lần liên tiếp",
+                                     "Sửa lỗi: Đăng nhập lại thất bại (mất mạng...) làm mất cookie đã lưu của acc",
+                                     "Sửa lỗi: Bấm Lưu liên tục chạy nhiều phiên đăng nhập chồng nhau; \"Mở tất cả\" bấm đúp mở trùng mọi acc",
+                                     "Sửa lỗi: Bật/tắt \"Tự mở lại acc này khi bị văng\" có tác dụng ngay, không cần bấm Lưu",
+                                     "Sửa lỗi: Giao diện bị đơ vài giây mỗi khi có Roblox mới xuất hiện (truy vấn WMI chạy nền)",
+                                     "Mới: Chống vòng lặp văng → mở → văng: acc văng 5 lần trong 10 phút thì tạm dừng tự mở lại và báo Discord",
+                                     "Mới: Tự thử lại tối đa 3 lần (cách 20 giây) khi mở lại acc gặp lỗi mạng / lỗi tạm thời",
+                                     "Mới: Mở acc đang chạy sẵn sẽ hỏi xác nhận; \"Mở tất cả\" bỏ qua acc đang chạy",
+                                     "Mới: Tự sao lưu danh sách acc (accounts.dat.bak) và khôi phục khi file chính bị hỏng; đổi thư mục dữ liệu chép đủ games.json + bản sao lưu",
+                                     "Mới: Chỉ cho chạy 1 bản Manager (tránh 2 bản cùng mở lại acc); tìm được Roblox cài ở Program Files",
+                                     "Sửa lỗi nhỏ: Log bị ghi trùng / đứt dòng; lỗi chạy nền được ghi vào log; hộp thoại lỗi không bật liên tục; Auto mode không spam log khi thiếu quyền"
+                                 ],
+                          "en":  [
+                                     "Major fix: Saving a 2nd account wiped the 1st (it overwrote it). Typing a different username now ADDS a new account and keeps the old one; add / delete / open each account independently",
+                                     "Fix: Delete / change game / change client no longer touch the previously selected account while you are typing another one",
+                                     "Fix: Half-typed text was cleared or jumped to another account whenever the app auto-reopened a crashed account or ran \"Open all\"",
+                                     "Fix: The saved poll interval (1s/2s/5s) was not applied on startup (always ran at 2 seconds)",
+                                     "Fix: An error while handling a crashed account could make it reopen several times in a row",
+                                     "Fix: A failed re-login (network down...) wiped the account\u0027s saved cookie",
+                                     "Fix: Pressing Save repeatedly ran overlapping sign-ins; double-clicking \"Open all\" launched every account twice",
+                                     "Fix: Toggling \"Auto reopen this account on crash\" now applies immediately, no Save needed",
+                                     "Fix: The UI froze for a few seconds whenever a new Roblox appeared (WMI query now runs in the background)",
+                                     "New: Crash-loop guard: an account that crashes 5 times in 10 minutes pauses auto-reopen and alerts Discord",
+                                     "New: Auto-retry up to 3 times (20 seconds apart) when reopening fails due to a network / temporary error",
+                                     "New: Opening an already-running account asks for confirmation; \"Open all\" skips running accounts",
+                                     "New: Automatic account backup (accounts.dat.bak) with recovery when the main file is damaged; changing the data folder now also copies games.json and the backup",
+                                     "New: Only one Manager instance may run (avoids two copies reopening accounts); detects Roblox installed under Program Files",
+                                     "Minor fixes: duplicated / cut-off log lines; background errors are now logged; error dialog no longer pops up repeatedly; Auto mode no longer spams the log when permissions are missing"
+                                 ]
+                      },
+                      {
+                          "version":  "2.6.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Mới: Chọn client để mở Roblox theo từng tài khoản — tự quét máy tìm Roblox gốc, Bloxstrap, Fishstrap, Voidstrap (nút 🔄 Quét lại trong mục Tài khoản)",
+                                     "Mới: Kiểm tra nhanh client đã chọn TRƯỚC khi mở — báo lỗi ngay nếu client bị gỡ/hỏng/bị chặn, không phải chờ 90 giây mới biết Roblox không lên được",
+                                     "Sửa lỗi: Danh sách Roblox đang chạy đôi khi hiện acc \"Running\" (0 MB / 0% CPU) dù Roblox đã tắt hẳn (process ma do Windows giữ handle) — khiến auto mở lại khi văng không hoạt động cho acc đó",
+                                     "Mới: Log chẩn đoán — khi tool lọc được process ma sẽ ghi rõ PID + lý do vào khung Log và file log để dễ truy vết"
+                                 ],
+                          "en":  [
+                                     "New: Pick which client launches Roblox per account — auto-scans for official Roblox, Bloxstrap, Fishstrap, Voidstrap (🔄 Rescan button in the Accounts tab)",
+                                     "New: Quick pre-check on the selected client BEFORE launching — reports an error right away if the client was uninstalled/corrupted/blocked, instead of waiting 90 seconds to find out Roblox never started",
+                                     "Fix: The running Roblox list could show an account as \"Running\" (0 MB / 0% CPU) even after Roblox had fully exited (a Windows zombie-process artifact) — this also silently broke auto-reopen-on-crash for that account",
+                                     "New: Diagnostic logging — whenever the tool filters out a zombie process, it now logs the PID and reason to the Log panel and log file for easier troubleshooting"
+                                 ]
+                      },
+                      {
+                          "version":  "2.5.0",
+                          "date":  "2026-11-08",
+                          "vi":  [
+                                     "Bản hiện tại trước khi có tự động cập nhật qua GitHub"
+                                 ],
+                          "en":  [
+                                     "Version before GitHub auto-update was added"
+                                 ]
+                      },
+                      {
+                          "version":  "1.0.0",
+                          "date":  "",
+                          "vi":  [
+                                     "Phát hành đầu tiên"
+                                 ],
+                          "en":  [
+                                     "First release"
+                                 ]
+                      }
+                  ],
+        "Count":  7
+    }
+]
