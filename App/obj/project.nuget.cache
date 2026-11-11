@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "WG0AuCsnfAc=",
+  "success": true,
+  "projectFilePath": "D:\\Download\\RobloxRAMManager_v2_6_5\\RobloxRAMManager_v2_6_5\\RobloxRAMManager\\App\\RobloxRAMManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.2\\microsoft.net.illink.tasks.10.0.2.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.web.webview2\\1.0.2792.45\\microsoft.web.webview2.1.0.2792.45.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\10.0.2\\microsoft.netcore.app.runtime.win-x64.10.0.2.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\10.0.2\\microsoft.windowsdesktop.app.runtime.win-x64.10.0.2.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\10.0.2\\microsoft.aspnetcore.app.runtime.win-x64.10.0.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference System.Security.Cryptography.ProtectedData will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "D:\\Download\\RobloxRAMManager_v2_6_5\\RobloxRAMManager_v2_6_5\\RobloxRAMManager\\App\\RobloxRAMManager.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Download\\RobloxRAMManager_v2_6_5\\RobloxRAMManager_v2_6_5\\RobloxRAMManager\\App\\RobloxRAMManager.csproj",
+      "libraryId": "System.Security.Cryptography.ProtectedData",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    }
+  ]
+}
